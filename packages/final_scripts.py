@@ -11,4 +11,6 @@ cfg = [
     '{}/move_packages.sh',
     #'{}/set_wallpaper.sh',
     '{}/set_terminator_config.sh'
+    '{}/unpack.sh'
+    '{}/dependencies.sh'
 ]
