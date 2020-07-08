@@ -18,7 +18,10 @@ _BRC="${PKIROOT}/bashrc.tmp"
 /usr/bin/echo "alias ll='ls -lh'" >> ${_BRC}
 /usr/bin/echo "alias tree='tree -C'" >> ${_BRC}
 /usr/bin/echo "alias crack_wifi='besside-ng wlan0'" >> ${_BRC}
-/usr/bin/echo "alias htb='openvpn ~/Documents/htb/vpn/htb.ovpn'" >> ${_BRC}
+/usr/bin/echo "alias htb='sudo openvpn ~/Documents/htb/vpn/htb.ovpn'" >> ${_BRC}
+/usr/bin/echo "alias autorecon='sudo python3 ~/pki/git/tools/autorecon/src/autorecon/autorecon.py'" >> ${_BRC}
+/usr/bin/echo "alias simplehttpserver='sudo python -m SimpleHTTPServer'" >> ${_BRC}
+/usr/bin/echo "alias evil-winrm='sudo ruby ~/pki/git/tools/evil-winrm/evil-winrm.rb'" >> ${_BRC}
 
 /usr/bin/cp ${_BRC} /home/${PKIUSR}/.bashrc 2>> ${PKILOG}
 /usr/bin/chown -f ${PKIUSR}:staff /home/${PKIUSR}/.bashrc 2>> ${PKILOG}
