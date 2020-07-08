@@ -16,6 +16,7 @@
 #       }
 #   }
 #
+##Also add list "raft"
 cfg = {
     "tools": {
         "unicorn": {
@@ -27,9 +28,9 @@ cfg = {
         "sn1per": {
             "url": "https://github.com/1N3/Sn1per.git"
         },
-        "apt2": {
-            "url": "https://github.com/MooseDojo/apt2.git"
-        },
+#        "apt2": {
+#            "url": "https://github.com/MooseDojo/apt2.git"
+#        },
         "ivre": {
             "url": "https://github.com/cea-sec/ivre.git"
         },
@@ -68,6 +69,12 @@ cfg = {
         },
         "linenum": {
             "url": "https://github.com/rebootuser/LinEnum.git"
+        },
+        "autorecon": {
+            "url": "https://github.com/Tib3rius/AutoRecon.git"
+        },
+        "evil-winrm": {
+            "url": "https://github.com/Hackplayers/evil-winrm.git"
         }
     },
 
