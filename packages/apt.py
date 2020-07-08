@@ -18,5 +18,7 @@ cfg = [
     "gconf2-common",
     "gvfs-bin",
     "psmisc",
-    "gnome-tweaks"
+    "gnome-tweaks",
+    "python3",
+    "python3-pip"
 ]
