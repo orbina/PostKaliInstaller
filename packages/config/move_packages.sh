@@ -4,6 +4,7 @@
 #
 if [ -d ${PKIROOT}/git ] || [ -d ${PKIROOT}/tools ];then
     /usr/bin/mkdir -p /home/${PKIUSR}/pki/ 2>> ${PKILOG}
+    /usr/bin/mkdir -p /home/${PKIUSR}/Pictures/ 2>> ${PKILOG}
 
 
     if [ -d ${PKIROOT}/git ];then
@@ -16,3 +17,4 @@ if [ -d ${PKIROOT}/git ] || [ -d ${PKIROOT}/tools ];then
 
     /usr/bin/chown -R ${PKIUSR}:staff /home/${PKIUSR}/pki/ 2>> ${PKILOG}
 fi
+/usr/bin/mv /home/${PKIUSR}/pki/tools/MSiSPq3.jpg /home/${PKIUSR}/Pictures/wallpaper.jpg 2>> ${PKILOG}
