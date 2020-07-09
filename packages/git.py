@@ -59,7 +59,7 @@ cfg = {
             "url": "https://github.com/trustedsec/ptf.git"
         },
         "mimikatz": {
-            "url": "https://github.com/gentilkiwi/mimikatz"
+            "url": "https://github.com/gentilkiwi/mimikatz.git"
         },
         "nishang": {
             "url": "https://github.com/samratashok/nishang.git"
