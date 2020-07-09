@@ -5,4 +5,5 @@
 #
 cfg = [
     'https://atom.io/download/deb'
+    'https://i.imgur.com/MSiSPq3.jpg'
 ]
