@@ -23,6 +23,9 @@ import datetime as dt
 from subprocess import STDOUT, check_call
 from colorama import Fore, Style
 
+#To ensure that user is running as root
+if os.geteuid() != 0:
+    exit("You need root privileges to run this script! Laterz!")
 
 class PKInstall:
     __DEBUG__ = False
@@ -62,8 +65,8 @@ class PKInstall:
         os.environ['PKIPKGROOT'] = self.__PACKAGE_ROOT__
 
         # Note, remember to change the password manually before using the system!
-        os.environ['PKIUSR'] = 'user'
-        os.environ['PKIPSW'] = 'Kali1234!'
+        os.environ['PKIUSR'] = os.getlogin()
+        #os.environ['PKIPSW'] = 'Kali1234!' #Used prior to Kali 2020.2
 
         os.environ['PKIUID'] = '20001'
         if 'uid' in args and isinstance(args['uid'], int):
@@ -418,7 +421,7 @@ class PKInstall:
       ░░       ░ ░░ ░  ▒ ░
             ░  ░    ░  
         ''' + Style.RESET_ALL + '''
-.+´ Post Kali Installer v1.0 `+.
+.+´ Post Kali Installer v1.1 `+.
         '''
 
 
