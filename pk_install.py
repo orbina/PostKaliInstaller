@@ -20,12 +20,9 @@ import sys
 import logging
 import argparse as ap
 import datetime as dt
+from getpass import getpass
 from subprocess import STDOUT, check_call
 from colorama import Fore, Style
-
-#To ensure that user is running as root
-if os.geteuid() != 0:
-    exit("You need root privileges to run this script! Laterz!")
 
 class PKInstall:
     __DEBUG__ = False
@@ -49,6 +46,10 @@ class PKInstall:
 
     def __init__(self, args={}):
         #
+        # To ensure that user is running as root
+        if os.geteuid() != 0:
+            exit("You need root privileges to run this script! Laterz!")
+        #
         # Set tools root directory
         if 'root' in args:
             self.__ROOT_PATH__ = args['root'].rstrip('/')
@@ -64,9 +65,25 @@ class PKInstall:
         os.environ['PKILOG'] = self.__LOG_FILE__
         os.environ['PKIPKGROOT'] = self.__PACKAGE_ROOT__
 
-        # Note, remember to change the password manually before using the system!
-        os.environ['PKIUSR'] = os.getlogin()
-        #os.environ['PKIPSW'] = 'Kali1234!' #Used prior to Kali 2020.2
+        #
+        # Option to create new sudo user, or keep the one logged in
+        print('Would you like PostKaliInstaller to create a new user?')
+        newuser = input('Y/n: ')
+        if newuser.lower() == 'yes' or newuser.lower() == 'y':
+            os.environ['PKIUSR'] = input('Enter new username: ')
+            os.system('mkdir -p /home/' + os.environ['PKIUSR'])
+            os.system('useradd -u 20001 -g staff -G sudo,bluetooth,cdrom,audio -d /home/' + os.environ['PKIUSR'] + ' -s /bin/bash ' + os.environ['PKIUSR'])
+            os.system('passwd ' + os.environ['PKIUSR'])
+            print('PostKaliInstaller will be installed on new user: ' + os.environ['PKIUSR'])
+            return
+        elif newuser.lower() == 'no' or newuser.lower() == 'n':
+            print('PostKaliInstaller will be installed on active user: ' + os.getlogin())
+            os.environ['PKIUSR'] = os.getlogin()
+            return
+        else:
+            print("Sorry, I didn't understand that. Aborting.")
+            sys.exit()
+        return
 
         os.environ['PKIUID'] = '20001'
         if 'uid' in args and isinstance(args['uid'], int):
