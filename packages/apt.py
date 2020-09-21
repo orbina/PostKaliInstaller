@@ -21,4 +21,5 @@ cfg = [
     "gnome-tweaks",
     "python3",
     "python3-pip"
+    "gobuster"
 ]
