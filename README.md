@@ -8,6 +8,43 @@ the configuration files in the packages directory and change them according to y
 
 Please note that there are several packages added to the different configurations by default.
 
+## Packages installed by default
+Through apt:
+* Terminator
+* tree
+* htop
+* git
+* gvfs (including gvfs-common, gvfs-daemons, gvfs-libs, gvfs-bin)
+* gconf (gconf-service, gconf2, gconf2-common)
+* psmisc
+* gnome-tweaks
+* python3 (including python3-pip)
+* gobuster
+
+Through git:
+* unicorn
+* shellKiller
+* sn1per
+* ivre
+* lolbas
+* pspy
+* pupy
+* rsg
+* duckencoder
+* empire
+* psinject
+* ptf
+* mimikatz
+* nishang
+* sherlock
+* linenum
+* autorecon
+* evil-winrm
+* Dictionaries (seclists and probablewordlists)
+
+Through wget:
+* cfg
+
 ## Configuration Arguments
 It is possible to run in simulation mode and enable debug mode by passing the
 proper arguments to the constructor. The following configuration will enable
