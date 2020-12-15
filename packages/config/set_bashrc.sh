@@ -22,6 +22,7 @@ _BRC="${PKIROOT}/bashrc.tmp"
 /usr/bin/echo "alias autorecon='sudo python3 ~/pki/git/tools/autorecon/src/autorecon/autorecon.py'" >> ${_BRC}
 /usr/bin/echo "alias simplehttpserver='sudo python -m SimpleHTTPServer'" >> ${_BRC}
 /usr/bin/echo "alias evil-winrm='sudo ruby ~/pki/git/tools/evil-winrm/evil-winrm.rb'" >> ${_BRC}
+/usr/bin/echo "alias ifconfig='ip a'" >> ${_BRC}
 
 /usr/bin/cp ${_BRC} /home/${PKIUSR}/.bashrc 2>> ${PKILOG}
 /usr/bin/chown -f ${PKIUSR}:staff /home/${PKIUSR}/.bashrc 2>> ${PKILOG}
